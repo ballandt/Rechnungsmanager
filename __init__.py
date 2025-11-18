@@ -2,7 +2,10 @@ import ui
 import database
 import os
 
+os.makedirs("/databases/", exist_ok=True)
+os.makedirs("/setup/", exist_ok=True)
 setup = database.Setup()
+
 if not setup.active_provider():
     ui.NewProviderWindow(setup)
 
